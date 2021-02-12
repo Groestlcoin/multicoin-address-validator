@@ -125,8 +125,12 @@ describe('WAValidator.validate()', function () {
             valid('2MxKEf2su6FGAUfCEAHreGFQvEYrfZDahUf', 'groestlcoin', 'testnet');
 
             // segwit addresses
-            valid('grs1q49qls5kklryt95g5xx4p6msycpgjp8ramfc9jq', 'groestlcoin');
-            valid('tgrs1qgjd3qhncsxdyh5gt7hz4k6zzvfguslwxwgv23j', 'groestlcoin');
+            valid('grs1q49qls5kklryt95g5xx4p6msycpgjp8ramfc9jq', 'grs');
+            valid('grs1qnxt8adg4qk3ljl0qhvp4m0nt56w6ma77vwr2jq', 'grs');
+            valid('tgrs1qw4z3xrtgx4f6w7akwpp2xa0gupmkv4yauemmm9', 'grs', 'testnet');
+
+            invalid("grs1q49qls5kklryt95g5xq4p6msycpgjp8ramfc9jq", 'grs'),
+            invalid("tgrs1qqjd3qhncsxdyh5gt7hz4k6zzvfguslwxwgv23j", 'grs')
         });
 
         it('should return true for correct peercoin addresses', function () {
@@ -1508,5 +1512,3 @@ describe('invalid results', function () {
 
 
 });
-
-
